@@ -1,16 +1,18 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ProductComponent } from './product/product.component';
 
 @Component({
   selector: 'app-productlist',
   standalone: true,
-  imports: [RouterOutlet,NgFor],
+  imports: [RouterOutlet,NgFor,NgIf,NgStyle,ProductComponent],
   templateUrl: './productlist.component.html',
   styleUrl: './productlist.component.css'
 })
 export class ProductlistComponent {
-  products = [
+ 
+   products = [
     {
       id: 1,
       name: "Nike React Infinity Run Flyknit",
@@ -535,5 +537,5 @@ export class ProductlistComponent {
       imageURL: "https://images.vans.com/is/image/Vans/MV122M-HERO?$583x583$",
       slug: "michael-feburary-sk8-hi"
     }
-  ];
+  ]
 }

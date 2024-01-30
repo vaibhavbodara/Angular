@@ -17,7 +17,7 @@
 
 5 : command for Compile and run Angular project : - ng serve
 
-6 : command for terminate live server : - ctrl+c
+6 : 
 
 7 : here 1-app.components.css,2-app.component.html,3-app.component.spec.ts and 4-app.component.ts this four file create one app component
     and file no 4 which is app.component.ts which is main component file
@@ -102,21 +102,28 @@
 27 : Event Binding : Data flow from ViewTemplate to component class with help of Event Binding
                      Event Binding:(data)="expression"                               
   
-28 : Two Way Data Binding : Two Way DataBinding is combination of property binding and event binding,
+28 : Two Way Data Binding(use in search component) : Two Way DataBinding is combination of property binding and event binding,
                             Two Way DataBinding binds data from component class to ViewTemplate and view template to component class.
 
 29 : directive : A directive is an instruction to the DOM ::1-Manipulate DOM , 2-Change Behaviour, 3-Add/Remove DOM Element
                  Directive have three types : 1-Component Directive, 2-Attribute Directive,3-Structural Directive
                  1-Component Directive : Component directive is the angular component. it is directive with a template.
                  2-Attribute Directive : Attribute Directive is used to change the appearance or Behaviour of DOM element.
-                                         1-ngClass , 2-ngStyle
+                                         1-ngClass , 2-ngStyle(use in SqureBracket[ngStyle])
                  3-Structural Directive : Structural directive is used to add or remove a DOM element on the webpage.
                                           1-ngIf , 2-ngFor , 3-ngSwitch
+                                          :: for Structural directive we use *ngIf , *ngFor , *ngSwitch. 
 
-30 : ngFor  ::   Angular ngFor directive iterates over a collection of data like an array,list,etc.and create an html element for each of the items from the html template.
-            :: for Structural directive we use *ngIf , *ngFor , *ngSwitch.                                       
-            :: Using ngFor Directive Rendering list of Complex Type(in productlist Component)  
+30 : ngFor Directive(productlist component)  :: Angula   r ngFor directive iterates over a collecti on of data like an array,list,etc.and create an html element for each of the items from the html template.
+                      :: Using ngFor Directive Rendering list of Complex Type(in productlist Component)  
 
-31 : ngIf Directive :                                
+31 : ngIf Directive(use in search.component.html and productlist component) :: Angular *ngIf directive is a Structural directive that is used to completely add or remove a DOM Element from the WebPage based on a given function. 
+                                                                            :: ngIf is based on condition , if condition is true than element adding from the DOM in webpage and if condition is false than element removing from the DOM in webpage.                       
 
+32 : ngStyle Directive(use in productlist component) : The ngStyle directive is an attribute directive which allows us to set many inline style of an Html element using expression,
+                                                       With Help of ngStyle we can add style as a dynamically
 
+33 : ngClass Directive(search component) : The ngClass directive is an attribute directive, which allows us to add or remove CSS classes to or from an HTML element dynamically, based on some typescript expression.
+
+34 : @Input() decorator & Custom Property Binding : When data transfer Parent component to Child component that time we use Custom property binding using @Input() decorator,
+                                                  Basically Comunication Between two components
