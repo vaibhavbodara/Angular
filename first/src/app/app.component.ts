@@ -6,8 +6,8 @@ import { ContainerComponent } from './container/container.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet,HeaderComponent,TopHeaderComponent,ContainerComponent],
+  // standalone: true,
+  // imports: [RouterOutlet,HeaderComponent,TopHeaderComponent,ContainerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
