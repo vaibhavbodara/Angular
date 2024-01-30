@@ -10,5 +10,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './main-menu.component.css'
 })
 export class MainMenuComponent {
-    mainMenuItem:string[]=["Home","Products","About","Contact","New Arrival","Sales"]
+    mainMenuItem:string[]=["Home","Products","Services","Contact","Sales"]
 }

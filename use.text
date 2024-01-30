@@ -110,10 +110,13 @@
                  1-Component Directive : Component directive is the angular component. it is directive with a template.
                  2-Attribute Directive : Attribute Directive is used to change the appearance or Behaviour of DOM element.
                                          1-ngClass , 2-ngStyle
-                 3-Structural Directive : Structural directive is used to add or remove a DOM element on the webpage
+                 3-Structural Directive : Structural directive is used to add or remove a DOM element on the webpage.
                                           1-ngIf , 2-ngFor , 3-ngSwitch
 
-30 : ngFor :Angular ngFor directive iterates over a collection of data like an array,list,etc.and create an html element for each of the items from the html template.
+30 : ngFor  ::   Angular ngFor directive iterates over a collection of data like an array,list,etc.and create an html element for each of the items from the html template.
             :: for Structural directive we use *ngIf , *ngFor , *ngSwitch.                                       
+            :: Using ngFor Directive Rendering list of Complex Type(in productlist Component)  
 
-31: 
+31 : ngIf Directive :                                
+
+

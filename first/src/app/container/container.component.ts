@@ -1,17 +1,18 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SearchComponent } from './search/search.component';
 import {NgFor, NgForOf} from "@angular/common";
+import { ProductlistComponent } from './productlist/productlist.component';
 
 
 @Component({
-  selector: 'product-list',
+  selector: 'app-container',
   standalone: true,
-  imports: [RouterOutlet,SearchComponent,NgForOf,NgFor],
-  templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.css'
+  imports: [RouterOutlet,SearchComponent,NgForOf,NgFor,ProductlistComponent],
+  templateUrl: './container.component.html',
+  styleUrl: './container.component.css'
 })
-export class ProductListComponent {
+export class ContainerComponent {
   //Name="John Doe";
 //   addToCart:number=0;
   //  listOfString:string[]=["vaibhav","dharmik","mitul","naitik"];
