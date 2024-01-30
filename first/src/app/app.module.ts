@@ -9,8 +9,8 @@ import { TopHeaderComponent } from './top-header/top-header.component';
 @NgModule({
   declarations: [
     AppComponent,
-],
-imports: [
+  ],
+  imports: [
     BrowserModule,
     HeaderComponent,
     TopHeaderComponent,
