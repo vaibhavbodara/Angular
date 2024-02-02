@@ -1,30 +1,25 @@
-// import { NgModule } from '@angular/core';
-// import { BrowserModule } from '@angular/platform-browser';
+// Import necessary Angular modules
+import { BrowserModule } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { ContainerComponent } from './container/container.component';
+import { HeaderComponent } from './header/header.component';
+import { TopHeaderComponent } from './top-header/top-header.component';
 
-// import { AppRoutingModule } from './app-routing.module';
-// import { AppComponent } from './app.component';
-// import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-// import { ReactiveFormsModule } from '@angular/forms';
-// import { ProductListComponent } from './productlist/productlist.component';
-// import { ProductComponent } from './product/product.component';
-// import { RouterModule } from '@angular/router';
-// import { CommonService } from './common.service';
-
-// @NgModule({
-//   declarations: [
-//     AppComponent,
-//     ProductListComponent,
-//     ProductComponent
-//   ],
-//   imports: [
-//     BrowserModule,
-//     AppRoutingModule,
-//     BrowserModule,
-//     ReactiveFormsModule,
-//     HttpClientModule,
-//     RouterModule.forRoot([]),
-//   ],
-//   providers: [],
-//   bootstrap: [AppComponent]
-// })
-// export class AppModule { }
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    HeaderComponent,
+    TopHeaderComponent,
+    ContainerComponent
+  ],
+  providers: [],
+  bootstrap: [
+    AppComponent,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+export class AppModule { }
