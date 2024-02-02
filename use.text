@@ -114,8 +114,8 @@
                                           1-ngIf , 2-ngFor , 3-ngSwitch
                                           :: for Structural directive we use *ngIf , *ngFor , *ngSwitch. 
 
-30 : ngFor Directive(productlist component)  :: Angula   r ngFor directive iterates over a collecti on of data like an array,list,etc.and create an html element for each of the items from the html template.
-                      :: Using ngFor Directive Rendering list of Complex Type(in productlist Component)  
+30 : ngFor Directive(productlist component)  :: Angular ngFor directive iterates over a collecti on of data like an array,list,etc.and create an html element for each of the items from the html template.
+                                             :: Using ngFor Directive Rendering list of Complex Type(in productlist Component)  
 
 31 : ngIf Directive(use in search.component.html and productlist component) :: Angular *ngIf directive is a Structural directive that is used to completely add or remove a DOM Element from the WebPage based on a given function. 
                                                                             :: ngIf is based on condition , if condition is true than element adding from the DOM in webpage and if condition is false than element removing from the DOM in webpage.                       
@@ -126,4 +126,25 @@
 33 : ngClass Directive(search component) : The ngClass directive is an attribute directive, which allows us to add or remove CSS classes to or from an HTML element dynamically, based on some typescript expression.
 
 34 : @Input() decorator & Custom Property Binding : When data transfer Parent component to Child component that time we use Custom property binding using @Input() decorator,
-                                                  Basically Comunication Between two components
+                                                    Basically Comunication Between two components
+
+35 : Custom Property Binding : Custom Property Binding is when we bind properties of a component class to some typescript expression.
+
+36 : @Output() decorator & Custom Event Binding : When data transfer Child component to Parent component that time we use Custom Event binding using @Outputput() decorator,
+
+37 : Non-Relatable Component Comunication(sibling components)(we use between search component and productlist component) : here we first transfer data search component(child) to container component(Parent) then transfer container(Parent) to productlist(chiid)
+
+38 : Template Reference Variable(in search component) : A Template Reference Variable is a Variable which stores Reference to a DOM element, component or directive on which it is used.     
+
+39 : Reference Variable Component(container component) :   
+
+40 : @ViewChild decorator in Angular(in search component) : The ViewChild decorator is used to query and get a Reference of the DOM element in the component.
+                                                            It returns the first matching element. 
+                                                            ViewChild only give one dom element which is first matching element
+
+41 : @ViewChildren decorator : The ViewChildren decorator is used to get a Reference to the list of the DOM element from the view template in the component class.
+                               It returns all the matching element.
+                               ViewChildren give all dom element which give Reference in view template
+
+42 : @ng-template in angular : The ng-template is an angular element which wraps an HTML snippet.
+                               This HTML snippet acts and can be used like a template and can be rendered in DOM element.

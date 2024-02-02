@@ -1,16 +1,20 @@
 import { NgFor, NgIf, NgStyle } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProductComponent } from './product/product.component';
+import { FilterComponent } from './filter/filter.component';
+import { Product } from '../../Model/Product';
 
 @Component({
   selector: 'app-productlist',
   standalone: true,
-  imports: [RouterOutlet,NgFor,NgIf,NgStyle,ProductComponent],
+  imports: [RouterOutlet,NgFor,NgIf,NgStyle,ProductComponent,FilterComponent],
   templateUrl: './productlist.component.html',
   styleUrl: './productlist.component.css'
 })
 export class ProductlistComponent {
+
+  selectedProduct:Product;
  
    products = [
     {
@@ -20,7 +24,7 @@ export class ProductlistComponent {
       brand: "NIKE",
       gender: "MEN",
       category: "RUNNING",
-      size: [6, 7, 8, 9, 10],
+      size: [6, 7, 8, 10],
       color: ["White", "Blue", "Black"],
       price: 160,
       discountPrice:140,
@@ -537,5 +541,19 @@ export class ProductlistComponent {
       imageURL: "https://images.vans.com/is/image/Vans/MV122M-HERO?$583x583$",
       slug: "michael-feburary-sk8-hi"
     }
-  ]
+  ];
+  totalProductCount:number=this.products.length;
+  totalProductInStock:number=this.products.filter(p=>p.is_in_inventory===true).length;
+  totalProductOutOfStock:number=this.products.filter(p=>p.is_in_inventory===false).length;
+  
+  //for the filter to productlist component
+  selectedFilterRadioButton:string="all"
+  onFilterChanged(value: string){
+    this.selectedFilterRadioButton=value;
+    // console.log(value);
+    }
+
+  // for the container to productlist component
+   @Input()
+   searchText:string='';
 }

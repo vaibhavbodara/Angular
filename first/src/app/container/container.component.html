@@ -21,12 +21,18 @@
 <!-- Event binding -->
 <!-- <input  (input)="onChangeName($event)">
 <p>Name={{Name}}</p> -->
-<app-search></app-search>
+<app-search (SearchTextChanged)="setSearchText($event)"></app-search>
 <!-- Structural directive -->
 <!-- <div *ngFor="let item of [2,3,4,5,6,7]">
     <p>Cuurent element of array is:{{item}} </p>
 </div> -->
-<app-productlist></app-productlist>
+<!-- here we use component(#ProductlistComponent) as reference variable  -->
+<app-productlist [searchText]="searchText" #ProductlistComponent></app-productlist>
+<product-detail *ngIf="ProductlistComponent.selectedProduct" [productlistComp]="productListComponent"></product-detail>
 </div>
+
+
+
+
 
 
