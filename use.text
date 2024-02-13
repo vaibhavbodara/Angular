@@ -147,4 +147,100 @@
                                ViewChildren give all dom element which give Reference in view template
 
 42 : @ng-template in angular : The ng-template is an angular element which wraps an HTML snippet.
-                               This HTML snippet acts and can be used like a template and can be rendered in DOM element.
+                               This HTML snippet acts and can be used like a template and can be rendered(with help of Template Reference Variable) in DOM element.
+
+43 : @ng-container : the ng-container is a special angular element that can hold Structural directive without adding new element to the DOM.
+
+44 : <ng-content> : (use in featured component ) in the parent component view template in between Selector of child component that conent replace the ng-content of child view template that is called conent projection.
+
+45 : @ContentChild() in Angular : the @ContentChild decorator is used to access a reference of a DOM  element or a component or directive from the projected content into child component class. 
+
+46 : @ContentChildren() : the @ContentChildren decorator is used to access a reference of all DOM elements,
+                          components or directives from the projected content in the child component class based on a given Selector.
+
+47 : Component Initialization : 1-when a constructor is called by that time, none of its input properties are updated and available to use.
+                                2-when a constructor is called by that time,the child components of that component are not constructed yet.
+                                3-projected contents are also not available by the time the constructor of a component is called.
+                                4-once the component is removed from the DOM, we can say component is destroyed.
+
+48 : Life Cycle Hooks : The angular life Cycle hooks are methods that angular invokes on a directive or a component,as it creates,changes and destroy them.
+                        Life Cycle Hooks : ngOnChanges,ngOnInit,ngDoCheck,ngAfterContentInit,ngAfterContentChanged,ngAfterViewInit,ngAfterViewChecked,ngDestroy.
+
+49 : ngOnChanges LifeCycle hook : The ngOnChanges hook get executed at the start,when a new component is created and its input bound properties are updated.
+                                  The ngOnChanges hook also gets executeds everytime the input bound properties of the component changes.
+                                  The ngOnChanges hook is not raised if the change detection Cycle does not  find any changes in the input properties value.
+
+50 : ngOnInit LifeCycle hook : Angular raises ngOnInit hook after it creates the component and update its input properties.
+                               This hook is raised after ngOnChanges.
+                               The ngOnInit hook is fired only once i.e.during the first change detection Cycle. after that,if the input properties changes, this hook does not gets called.
+            
+                               By the time ngOnInit gets called, none of the child components or projected contents or view are available at this point.
+                               Hence any property decorated with @ViewChild,@ViewChildren,@ContentChild or @ContentChildren will not be available to use.
+
+51 : ngDoCheck  LifeCycle hook : Angular invokes ngDoCheck hook during every change detection Cycle.This hook is invoked even if there is no change in input bound properties.
+
+                                 For Example: the ngDoCheck LifeCycle hook will run if you clicked a button on webpage,which does not do Anything.
+                                 But still its an event so the change detection Cycle will run and execute ngDoCheck hook. 
+
+                                 Angular invokes ngDocheck LifeCycle hook after ngOnChanges and ngOnInit hooks.
+                                 we can use this hook to implement a custom change detection, whenever angular fails to detect any change made to input bound properties.
+                                 The ngDoCheck hook is also a great place to use, when you want to execute some code on every chnage detection Cycle.
+
+52 : ngAfterContentInit LifeCycle hook : The ngAfterContentInit LifeCycle hook is called after the components projected conent has been fully initialized.
+                                         Angular updates the properties decorated with @ContentChild &@ContentChildren decorator just because this hook is raised.
+                                         This LifeCycle hook gets called only once,during the first change detection cycle.After that,if the projected content changes,this LifeCycle hook will not get called.
+
+53 : ngAfterContentChecked : The ngAfterContentChecked lifecycle hook is called during every change detection cycle,
+                             After angular has finished initializing and checking project content.
+                             Whenever projected content change by dynamic that is called ngAfterContentChecked.
+
+                             Angular also updates the properties with @ContentChild and @ContentChildren decorator, before raising ngAfterContentChanged hook.
+                             Angular Raises this hook even if there is no projected content in the component.
+
+                          :: The ngAfterContentInit hook is called after the projected content is initialized.
+                          :: ngAfterContentChecked is called whenevar the projected content is initialized,Checked and updated.
+
+54 : **Note** : The ngAfterContentInit and ngAfterContentChecked are component hook only.
+                These hooks are not available for directives.
+
+55 : ngAfterViewInit LifeCycle hook : The ngAfterViewInit is called after the components view template and all its child components view templates are fully initialized.
+                                      Angular also updates the properties decorated with @ViewChild and @ViewChildren decorate before raising this hook.
+                   
+                                      This hook is called during the first change detection cycle,when angular initialize the view for the first time.
+                                      By, the time this hook gets called for a component, all the lifecycle hook methods of child components and directives are completely processed and child components are completely ready.
+                                      The ngAfterViewInit hook also component only hook not for directives.
+
+56 : ngAfterViewChecked : Angular fires ngAfterViewChecked hook after it checks and updates the components View template and all its child components view templates.
+
+                          This hook is called during the first change detection cycle.after ngAfterViewInit hook has executed.And after that during every change detection cycle.
+
+                          Angular also updates the properties decorated with @ViewChild and @ViewChildren decorator before raising this hook.
+
+                          Note : The ngAfterViewChecked hook is  component hook only. These hook is not available for directives.
+
+57 : ngOnDestroy : Angular fires ngOnDestroy lifecycle hook just before the comoponent or the directive is destroyed. i.e.,removed from the DOM.
+ 
+                   This hook is a great place to do some cleanup work like unsubscribe from an observalable or detach event handler etc.,
+                   as this hook is called right before the component is destroyed.
+
+                   This ngOnDestroy is the last lifecycle hook of a component and directive.
+
+58 : **Note** : All LifeCycle hooks are available for components but not all hooks are not available for directive.
+                ngAfterContentInit,ngAfterContentChecked,ngAfterViewInit,ngAfterViewChecked this are not available for directive.
+
+59 : Custom Attribute Directive : 
+
+60 : 1-Angular keeps the component & View in sync using templates,data binding and change detection etc.All of them are bypassed when we update the DOM directly.
+      
+     2-The DOM manipulation works only in browsers.You will not able to use your app in other platforms like web workers,servers for server-side rendaring,
+       desktop or mobile apps etc. where there is no browser. 
+      
+     3-The DOM's does not sanitize the data.Hence is possible to inject a script,thereby,opening our app an easy target for the XSS injecton attacks.
+
+61 : **Renderer2**(in SetBackground.directives.ts) : Renderer2 allows us to Manipulate the DOM without accessing the DOM element directly,by providing a layer of abstraction between the DOM element and the component code.
+
+62 : @HostListner(in highlight.directives.ts) : The HostListner decorator listen to a DOM event on the host element and its react to that event  by executing an event handler method. 
+
+63 : @HostBinding in Angular [in app-hover.directives.ts, sample.directives.ts(Angular-property-Binding folder)] : The @HostBinding decorator binds a host element property of a directive or a component class.
+
+64 : Property Binding In Directive :       

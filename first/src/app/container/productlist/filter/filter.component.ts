@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, } from '@angular/forms';
 
 
 @Component({
@@ -21,7 +21,7 @@ export class FilterComponent {
   // for data transfer child to parent component
   @Output()
   selectedFilterRadioButtonChanged:EventEmitter<string>=new EventEmitter<string>();
-  selectedFilterRadioButton:string="all";
+  selectedFilterRadioButton:any="all";
 
   // this method for raise the new EventEmitter
   onselectedFilterRadioButtonChanged(){

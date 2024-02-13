@@ -39,3 +39,6 @@ export class SearchComponent {
     this.SearchTextChanged.emit(this.searchText);     
   }
 }
+
+
+

@@ -1,4 +1,4 @@
-<div class="ekart--product--details--info scroll">
+<div class="ekart--product--details--info scroll" appHighlight>
     <div class="ekart-product-detail-close">
         <i class="fa fa-times" aria-hidden="true"></i>
     </div>
@@ -11,9 +11,12 @@
             <h2>{{product.name}}</h2>
         </div>
         <div class="ekart-product-detail-gbc">
-            <span>{{product.gender}}</span>
-            <span>{{product.brand}}</span>
-            <span>{{product.category}}</span>
+            <!-- <span [setBackground]="'red'"    [textColor]="'white'">{{product.gender}}</span> -->
+            <!-- <span [setBackground]="'yellow'" [textColor]="'black'">{{product.brand}}</span> -->
+            <!-- <span [setBackground]="'black'"  [textColor]="'white'">{{product.category}}</span> -->
+            <span setBackground>{{product.gender}}</span>
+            <span setBackground>{{product.brand}}</span>
+            <span setBackground>{{product.category}}</span>
         </div>
         <div class="ekart-product-detail-price">
             <p>
@@ -56,7 +59,11 @@
         </div>
     </div>
     <div class="ekart-product-detail-addtoCart">
-        <button class="btn-add-to-cart">ADD TO CART</button>
+        <button class="btn-add-to-cart" *ngIf="product.is_in_inventory; else notifyMe" appHover>ADD TO CART</button>
+        <ng-template #notifyMe>
+            <button class="btn-add-to-cart">NOTIFY ME</button>
+        </ng-template>
+ 
     </div>
 </div>
 <div class="overlay"></div>

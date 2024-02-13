@@ -5,10 +5,12 @@ import { ProductComponent } from './product/product.component';
 import { FilterComponent } from './filter/filter.component';
 import { Product } from '../../Model/Product';
 
+
 @Component({
   selector: 'app-productlist',
   standalone: true,
   imports: [RouterOutlet,NgFor,NgIf,NgStyle,ProductComponent,FilterComponent],
+ 
   templateUrl: './productlist.component.html',
   styleUrl: './productlist.component.css'
 })

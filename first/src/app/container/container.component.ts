@@ -4,12 +4,13 @@ import { SearchComponent } from './search/search.component';
 import {NgFor, NgForOf, NgIf} from "@angular/common";
 import { ProductlistComponent } from './productlist/productlist.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { FeaturedBrandsComponent } from './featured-brands/featured-brands.component';
 
 
 @Component({
   selector: 'app-container',
   standalone: true,
-  imports: [RouterOutlet,SearchComponent,NgForOf,NgFor,NgIf,ProductlistComponent,ProductDetailComponent],
+  imports: [RouterOutlet,SearchComponent,NgForOf,NgFor,NgIf,ProductlistComponent,ProductDetailComponent,FeaturedBrandsComponent],
   templateUrl: './container.component.html',
   styleUrl: './container.component.css'
 })
@@ -65,6 +66,6 @@ export class ContainerComponent {
 //         this.addToCart++;
 //        }
 //    }
-
-
 }
+
+

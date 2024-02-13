@@ -29,6 +29,25 @@
 <!-- here we use component(#ProductlistComponent) as reference variable  -->
 <app-productlist [searchText]="searchText" #ProductlistComponent></app-productlist>
 <product-detail *ngIf="ProductlistComponent.selectedProduct" [productlistComp]="productListComponent"></product-detail>
+
+  <div class="ekart-featured-products">
+     <div class="ekart-featured-products-heading">
+        <h1>Latest arrival in popular brands</h1>
+     </div>
+   <featured-brands>
+    <h3 class="title">New Arrival in Nike</h3>
+    <button class="call-to-action">Show new Arrivals in Nike</button>
+   </featured-brands>
+   <featured-brands>
+    <h3 class="title">New Arrival in Adidas</h3>
+    <button class="call-to-action">Show new Arrivals in Adidas</button>
+   </featured-brands>
+   <featured-brands>
+    <h3 class="title">New Arrival in Reebok</h3>
+    <button class="call-to-action">Show new Arrivals in Reebok</button>
+   </featured-brands>
+</div>
+
 </div>
 
 
